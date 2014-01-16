@@ -88,7 +88,7 @@ endif
 LOCAL_MODULE                    := libOmxVdec
 LOCAL_MODULE_TAGS               := optional
 LOCAL_CFLAGS                    := $(libOmxVdec-def)
-LOCAL_C_INCLUDES                += $(libmm-vdec-inc)
+LOCAL_C_INCLUDES                += $(libmm-vdec-inc) -fno-strict-aliasing
 
 LOCAL_PRELINK_MODULE    := false
 LOCAL_SHARED_LIBRARIES  := liblog libutils libbinder libcutils libdl
@@ -117,7 +117,7 @@ mm-vdec-test-inc    += $(LOCAL_PATH)/vdec/inc
 
 LOCAL_MODULE                    := mm-vdec-omx-test
 LOCAL_MODULE_TAGS               := optional
-LOCAL_CFLAGS                    := $(libOmxVdec-def)
+LOCAL_CFLAGS                    := $(libOmxVdec-def) -fno-strict-aliasing
 LOCAL_C_INCLUDES                := $(mm-vdec-test-inc)
 
 LOCAL_PRELINK_MODULE      := false
